@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lienthuvien/Screen/home_screen.dart';
-import 'package:lienthuvien/Screen/legal_documents_screen.dart';
-import 'package:lienthuvien/constants/asset_helper.dart';
-import 'package:lienthuvien/constants/color_constants.dart';
+import 'package:ltv/Screen/home_screen.dart';
+import 'package:ltv/Screen/legal_documents_screen.dart';
+import 'package:ltv/constants/asset_helper.dart';
+import 'package:ltv/constants/color_constants.dart';
 
 import 'news_screen.dart';
 

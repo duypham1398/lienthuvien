@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lienthuvien/constants/asset_helper.dart';
-import 'package:lienthuvien/constants/color_constants.dart';
-import 'package:lienthuvien/constants/dismension_constants.dart';
+import 'package:ltv/constants/asset_helper.dart';
+import 'package:ltv/constants/color_constants.dart';
+import 'package:ltv/constants/dismension_constants.dart';
 
 class ItemDocument extends StatelessWidget {
   ItemDocument(

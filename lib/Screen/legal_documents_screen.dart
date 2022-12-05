@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lienthuvien/widget/button_widget.dart';
+import 'package:ltv/widget/button_widget.dart';
 
 import '../constants/asset_helper.dart';
 import '../constants/dismension_constants.dart';
@@ -33,11 +33,11 @@ class _Legal_Documents_ScreenState extends State<Legal_Documents_Screen> {
                 Expanded(
                   child: Search(),
                 ),
-                Expanded(
-                  child: ButtonWidget(
-                    title: 'Nâng cao',
-                  ),
-                ),
+                // Expanded(
+                //   child: ButtonWidget(
+                //     title: 'Nâng cao',
+                //   ),
+                // ),
               ],
             ),
           ],

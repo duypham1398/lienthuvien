@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lienthuvien/constants/asset_helper.dart';
-import 'package:lienthuvien/constants/dismension_constants.dart';
+import 'package:ltv/constants/asset_helper.dart';
+import 'package:ltv/constants/dismension_constants.dart';
 
 class TitleWithLogo extends StatelessWidget {
   const TitleWithLogo({Key? key}) : super(key: key);
