@@ -16,4 +16,7 @@ class AssetHelper {
   static const String imgDoc1x = 'assets/images/imgDoc1x.png';
   static const String imgDoc2x = 'assets/images/imgDoc2x.png';
   static const String imgDoc3x = 'assets/images/imgDoc3x.png';
+  static const String imgDissertation1x = 'assets/images/dissertation1x.png';
+  static const String imgDissertation2x = 'assets/images/dissertation2x.png';
+  static const String imgDissertation3x = 'assets/images/dissertation3x.png';
 }

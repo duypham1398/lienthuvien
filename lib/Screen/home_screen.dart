@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ltv/Screen/quotes_screen.dart';
 import 'package:ltv/constants/asset_helper.dart';
 import 'package:ltv/constants/dismension_constants.dart';
 import 'package:ltv/widget/item_document.dart';
@@ -40,13 +41,66 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 20),
-            ItemDocument(
-              width: 130,
-              height: 175,
-              title: 'Sách',
-              total: 7032,
-              img: AssetHelper.imgDoc2x,
-            ),
+            // Container(
+            //   child: ListView(
+            //     shrinkWrap: true,
+            //     scrollDirection: Axis.horizontal,
+            //     // crossAxisAlignment: CrossAxisAlignment.start,
+            //     children: [
+            //       GestureDetector(
+            //         onTap: () {
+            //           Navigator.push(
+            //             context,
+            //             MaterialPageRoute(
+            //               builder: (context) => QuotesScreen(),
+            //             ),
+            //           );
+            //         },
+            //         child: ItemDocument(
+            //           width: 130,
+            //           height: 175,
+            //           title: 'Bài trích',
+            //           total: 7032,
+            //           img: AssetHelper.imgDoc2x,
+            //         ),
+            //       ),
+            //       GestureDetector(
+            //         onTap: () {
+            //           Navigator.push(
+            //             context,
+            //             MaterialPageRoute(
+            //               builder: (context) => QuotesScreen(),
+            //             ),
+            //           );
+            //         },
+            //         child: ItemDocument(
+            //           width: 130,
+            //           height: 175,
+            //           title: 'Sách',
+            //           total: 7032,
+            //           img: AssetHelper.imgDoc2x,
+            //         ),
+            //       ),
+            //       GestureDetector(
+            //         onTap: () {
+            //           Navigator.push(
+            //             context,
+            //             MaterialPageRoute(
+            //               builder: (context) => QuotesScreen(),
+            //             ),
+            //           );
+            //         },
+            //         child: ItemDocument(
+            //           width: 130,
+            //           height: 175,
+            //           title: 'Luận văn',
+            //           total: 7032,
+            //           img: AssetHelper.imgDoc2x,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             SizedBox(height: 35),
             Container(
               alignment: Alignment.centerLeft,
@@ -72,14 +126,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Column(
                 children: [
-                  ItemNews(
-                    postDate: '12/2/2022',
-                    titleItem: 'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
-                  ),
-                  ItemNews(
-                    postDate: '12/2/2022',
-                    titleItem: 'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
-                  ),
                   ItemNews(
                     postDate: '12/2/2022',
                     titleItem: 'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',

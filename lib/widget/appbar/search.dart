@@ -9,6 +9,7 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 32,
       margin: EdgeInsets.symmetric(horizontal: kMediumpading),
       child: TextField(
         decoration: InputDecoration(

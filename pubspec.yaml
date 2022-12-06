@@ -83,7 +83,7 @@ flutter:
     - family: NewYorkSmallMedium
       fonts:
         - asset: assets/fonts/NewYorkSmallMedium.ttf
-          weight: 800
+          weight: 600
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

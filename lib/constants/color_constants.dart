@@ -7,4 +7,5 @@ class ColorPalette {
   static const Color itemTextsp = Color(0xff9B9B9B);
   static const Color titleText = Color(0xff2948C1);
   static const Color unSelected = Color(0xff585858);
+  static const Color bgTitleLegalDocument = Color(0xffECECEC);
 }
