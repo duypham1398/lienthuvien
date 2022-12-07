@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:ltv/constants/asset_helper.dart';
 import 'package:ltv/constants/color_constants.dart';
-import 'package:ltv/constants/dismension_constants.dart';
+
+import '../constants/dismension_constants.dart';
 
 class ItemDocument extends StatelessWidget {
-  ItemDocument(
-      {Key? key,
-      required this.width,
-      this.height,
-      this.title,
-      this.total,
-      this.img})
-      : super(key: key);
+  ItemDocument({
+    Key? key,
+    required this.width,
+    this.height,
+    this.title,
+    this.total,
+    required this.img,
+  }) : super(key: key);
   double? width;
   double? height;
   String? title;
   int? total;
-  String? img;
+  String img;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +25,9 @@ class ItemDocument extends StatelessWidget {
       margin: EdgeInsets.only(left: kMediumpading),
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(AssetHelper.imgDoc2x), fit: BoxFit.cover),
+          image: AssetImage(img),
+          fit: BoxFit.cover,
+        ),
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
       ),

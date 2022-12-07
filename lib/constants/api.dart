@@ -1,9 +1,10 @@
-// const PROTOCOL = "http://";
-// const HOST = "171.244.9.242";
-//
-// const PORT = ":8864/";
-// const PATH_CONTEXT = 'hstd-service';
-// const BASE_URL = '$PROTOCOL$HOST$PORT$PATH_CONTEXT';
-// const URL_LOGIN = '$BASE_URL/auth/app-login';
+const PROTOCOL = "http://";
+const HOST = "171.244.9.247";
+const PORT = ":8083/";
+const PATH_CONTEXT = 'api';
+const BASE_URL = '$PROTOCOL$HOST$PORT$PATH_CONTEXT';
+// const URL_LOGIN = '$BASE_URL/Account/Token';
+// const URL_LOGOUT = '$BASE_URL/Account/Logout';
 // const URL_PROFILE = '$BASE_URL/profile';
 // const URL_GET_PROFILE = '$BASE_URL/profile/get-profile';
+const URL_TYPE_DOCUMENT = '$BASE_URL/Statistical/SoLuongTaiLieuTheoLoai';
