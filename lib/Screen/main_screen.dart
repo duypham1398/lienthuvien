@@ -5,21 +5,58 @@ import 'package:ltv/Screen/legal_documents_screen.dart';
 import 'package:ltv/constants/asset_helper.dart';
 import 'package:ltv/constants/color_constants.dart';
 
+import '../constants/dismension_constants.dart';
+import '../widget/navbar.dart';
 import 'news_screen.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen> {
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 0;
   final screen = [HomeScreen(), Legal_Documents_Screen(), News_Screen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screen[_selectedIndex],
+      key: _scaffoldKey,
+      drawer: NavBar(),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AssetHelper.backgroundImage3x),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: kMediumpading / 2, top: 40),
+              child: Stack(
+                children: [
+                  Container(
+                    child: IconButton(
+                      padding: EdgeInsets.only(bottom: 25),
+                      icon: SvgPicture.asset(AssetHelper.iconMenu),
+                      onPressed: () {
+                        _scaffoldKey.currentState!.openDrawer();
+                      },
+                    ),
+                  ),
+                  Container(
+                      alignment: Alignment.center,
+                      child: Image.asset(AssetHelper.title1x)),
+                ],
+              ),
+            ),
+            Expanded(child: screen[_selectedIndex]),
+          ],
+        ),
+      ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: Colors.white,

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ltv/constants/TxtStyle.dart';
 import 'package:ltv/constants/color_constants.dart';
-import 'package:ltv/widget/appbar/appbar_container.dart';
 
 import '../constants/dismension_constants.dart';
 import '../widget/appbar/search_with_button.dart';
-import '../widget/appbar/title_with_logo.dart';
 import '../widget/item_legal_doc.dart';
 
 class Legal_Documents_Screen extends StatefulWidget {
@@ -18,71 +16,91 @@ class Legal_Documents_Screen extends StatefulWidget {
 class _Legal_Documents_ScreenState extends State<Legal_Documents_Screen> {
   @override
   Widget build(BuildContext context) {
-    return AppBarContainer(
-      title: Column(
-        children: [
-          SizedBox(height: 20),
-          TitleWithLogo(),
-          SizedBox(height: kMediumpading),
-          SearchWithButton(),
-          SizedBox(height: kMediumpading),
-          Container(
-            padding: EdgeInsets.only(left: kMediumpading),
-            decoration: BoxDecoration(
-              color: ColorPalette.bgTitleLegalDocument,
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(kMediumpading),
-                topLeft: Radius.circular(kMediumpading),
+    return Column(
+      children: [
+        Container(
+          child: Column(
+            children: [
+              SearchWithButton(),
+              SizedBox(height: kMediumpading),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.only(left: kMediumpading),
+                decoration: BoxDecoration(
+                  color: ColorPalette.bgTitleLegalDocument,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(kMediumpading),
+                    topLeft: Radius.circular(kMediumpading),
+                  ),
+                ),
+                height: 44,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Text(
+                        'Tải về',
+                        style: TxtStyle.headingLegalDoc,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 3,
+                      child: Text(
+                        'Số/Ký hiệu',
+                        textAlign: TextAlign.start,
+                        style: TxtStyle.headingLegalDoc,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Text(
+                        'Ngày ban hành',
+                        style: TxtStyle.headingLegalDoc,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Text(
+                        'Trích yếu',
+                        textAlign: TextAlign.start,
+                        style: TxtStyle.headingLegalDoc,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            height: 44,
-            child: Row(
+            ],
+          ),
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
               children: [
-                Expanded(
-                  flex: 1,
-                  child: Text('Tải về', style: TxtStyle.headingLegalDoc),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Text('Số/Ký hiệu', style: TxtStyle.headingLegalDoc),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Text('Ngày ban hành', style: TxtStyle.headingLegalDoc),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Text('Trích yếu', style: TxtStyle.headingLegalDoc),
+                Container(
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      Container(
+                        color: Colors.white,
+                        child: ItemLegalDoc(
+                          kyhieu: '211/QĐ-BTTTT',
+                          datebh: '27/2/2017',
+                          trichyeu: '211-QD-Thuat...',
+                        ),
+                      ),
+                      // Container(
+                      // child: ItemLegalDoc(),
+                      // )
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
-        ],
-      ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              child: Column(
-                children: [
-                  Container(
-                    color: Colors.white,
-                    child: ItemLegalDoc(
-                      kyhieu: '211/QĐ-BTTTT',
-                      datebh: '27/2/2017',
-                      trichyeu: '211-QD-Thuat...',
-                    ),
-                  ),
-                  // Container(
-                  // child: ItemLegalDoc(),
-                  // )
-                ],
-              ),
-            ),
-          ],
         ),
-      ),
+      ],
     );
   }
 }
