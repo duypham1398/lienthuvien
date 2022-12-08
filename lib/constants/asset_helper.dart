@@ -6,6 +6,9 @@ class AssetHelper {
   static const String iconSearch1x = 'assets/icons/search1x.png';
   static const String iconSearch2x = 'assets/icons/search2x.png';
   static const String iconSearch3x = 'assets/icons/search3x.png';
+  static const String iconGioithieu = 'assets/icons/iconGioithieu.svg';
+  static const String iconFolder ='assets/icons/iconFolder.svg';
+  static const String iconSMS = 'assets/icons/iconSMS.svg';
 
   static const String backgroundImage1x = 'assets/images/background1x.png';
   static const String backgroundImage2x = 'assets/images/background2x.png';
@@ -19,4 +22,5 @@ class AssetHelper {
   static const String imgDissertation1x = 'assets/images/dissertation1x.png';
   static const String imgDissertation2x = 'assets/images/dissertation2x.png';
   static const String imgDissertation3x = 'assets/images/dissertation3x.png';
+  static const String imgHeaderDrawer = 'assets/images/headerDrawer.svg';
 }
