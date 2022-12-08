@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/dismension_constants.dart';
+import '../constants/dismension_constants.dart';
 
 class ItemLegalDoc extends StatelessWidget {
   ItemLegalDoc({Key? key, required this.kyhieu, this.datebh, this.trichyeu})
