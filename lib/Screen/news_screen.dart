@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ltv/widget/appbar/search.dart';
 
 import '../constants/dismension_constants.dart';
+import '../widget/appbar/search.dart';
+import '../widget/item_news.dart';
 
 class News_Screen extends StatefulWidget {
   const News_Screen({Key? key}) : super(key: key);
@@ -24,8 +25,45 @@ class _News_ScreenState extends State<News_Screen> {
           ),
         ),
         Expanded(
-          child: Column(),
-        )
+            child: SingleChildScrollView(
+                child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  topLeft: Radius.circular(20),
+                ),
+                color: Colors.white,
+              ),
+              child: Column(
+                children: [
+                  ItemNews(
+                    postDate: '12/2/2022',
+                    titleItem: 'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
+                  ),
+                  ItemNews(
+                    postDate: '12/2/2022',
+                    titleItem: 'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
+                  ),
+                  ItemNews(
+                    postDate: '12/2/2022',
+                    titleItem: 'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
+                  ),
+                  ItemNews(
+                    postDate: '12/2/2022',
+                    titleItem: 'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
+                  ),
+                  ItemNews(
+                    postDate: '12/2/2022',
+                    titleItem: 'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
+                  ),
+                ],
+              ),
+            ),
+          ],
+        )))
       ],
     );
   }
