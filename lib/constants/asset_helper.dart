@@ -9,6 +9,8 @@ class AssetHelper {
   static const String iconGioithieu = 'assets/icons/iconGioithieu.svg';
   static const String iconFolder ='assets/icons/iconFolder.svg';
   static const String iconSMS = 'assets/icons/iconSMS.svg';
+  static const String iconEye = 'assets/icons/vuesax-outline-eye.svg';
+  static const String iconLike = 'assets/icons/vuesax-outline-like.svg';
 
   static const String backgroundImage1x = 'assets/images/background1x.png';
   static const String backgroundImage2x = 'assets/images/background2x.png';

@@ -18,61 +18,59 @@ class _Legal_Documents_ScreenState extends State<Legal_Documents_Screen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Column(
-            children: [
-              SearchWithButton(),
-              SizedBox(height: kMediumpading),
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.only(left: kMediumpading),
-                decoration: BoxDecoration(
-                  color: ColorPalette.bgTitleLegalDocument,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(kMediumpading),
-                    topLeft: Radius.circular(kMediumpading),
-                  ),
-                ),
-                height: 44,
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Text(
-                        'Tải về',
-                        style: TxtStyle.headingLegalDoc,
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 3,
-                      child: Text(
-                        'Số/Ký hiệu',
-                        textAlign: TextAlign.start,
-                        style: TxtStyle.headingLegalDoc,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Text(
-                        'Ngày ban hành',
-                        style: TxtStyle.headingLegalDoc,
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Text(
-                        'Trích yếu',
-                        textAlign: TextAlign.start,
-                        style: TxtStyle.headingLegalDoc,
-                      ),
-                    ),
-                  ],
+        Column(
+          children: [
+            SearchWithButton(),
+            SizedBox(height: kMediumpading),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.only(left: kMediumpading),
+              decoration: BoxDecoration(
+                color: ColorPalette.bgTitleLegalDocument,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(kMediumpading),
+                  topLeft: Radius.circular(kMediumpading),
                 ),
               ),
-            ],
-          ),
+              height: 44,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      'Tải về',
+                      style: TxtStyle.headingLegalDoc,
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Text(
+                      'Số/Ký hiệu',
+                      textAlign: TextAlign.start,
+                      style: TxtStyle.headingLegalDoc,
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Text(
+                      'Ngày ban hành',
+                      style: TxtStyle.headingLegalDoc,
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Text(
+                      'Trích yếu',
+                      textAlign: TextAlign.start,
+                      style: TxtStyle.headingLegalDoc,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
         Expanded(
           child: SingleChildScrollView(
