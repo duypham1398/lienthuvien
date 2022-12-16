@@ -6,22 +6,19 @@ import '../constants/dismension_constants.dart';
 class ItemDocument extends StatelessWidget {
   ItemDocument({
     Key? key,
-    required this.width,
-    this.height,
     this.title,
     this.total,
     required this.img,
   }) : super(key: key);
-  double? width;
-  double? height;
   String? title;
   int? total;
   String img;
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
-      width: width,
-      height: height,
+      width: size.width / 3,
+      height: 175,
       margin: EdgeInsets.only(left: kMediumpading),
       decoration: BoxDecoration(
         image: DecorationImage(
