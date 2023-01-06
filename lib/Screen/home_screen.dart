@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ltv/Controllers/list_document_controller.dart';
+import 'package:intl/intl.dart';
 import 'package:ltv/Repository/list_document_repository.dart';
 import 'package:ltv/constants/dismension_constants.dart';
 
+import '../Repository/news_repository.dart';
 import '../constants/asset_helper.dart';
 import '../constants/color_constants.dart';
 import '../widget/appbar/search.dart';
@@ -22,8 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final pageDanhMuc = [BaiTrichPage(), BookPage()];
   @override
   Widget build(BuildContext context) {
-    var listDocumentController =
-        ListDocumentController(ListDocumentRepository());
     return Column(
       children: [
         Column(
@@ -38,60 +37,38 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 16, color: ColorPalette.whiteText),
               ),
             ),
-            // SizedBox(height: 20),
             SizedBox(
               height: 175,
-              child: FutureBuilder(
-                future: listDocumentController.fetchListDocument(),
-                builder: (context, AsyncSnapshot snapshot) {
+              child: FutureBuilder<List<dynamic>>(
+                future: getListDocument(),
+                builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
+                    return Center(child: CircularProgressIndicator());
                   }
                   if (snapshot.hasData && snapshot.data != null) {
                     return ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: 1,
+                      itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {},
                           child: ItemDocument(
-                            // title: snapshot['Data']['TypeBookID'],
-                            // total: snapshot,
-                            img: AssetHelper.imgDissertation1x,
+                            title: snapshot.data![index]['TypeBookName'],
+                            total: snapshot.data![index]['TongSo'],
+                            img: AssetHelper.imgDoc1x,
                           ),
                         );
                       },
                     );
                   }
+                  ;
+                  // return Center(child: CircularProgressIndicator());
                   return Container(
-                    child: Text("HIHI"),
+                    child: Text("No Data"),
                   );
                 },
               ),
-              // child: ListView(
-              //   shrinkWrap: true,
-              //   scrollDirection: Axis.horizontal,
-              //   children: <Widget>[
-              //     GestureDetector(
-              //       onTap: () {
-              //         Navigator.push(
-              //           context,
-              //           MaterialPageRoute(
-              //             builder: (context) => BaiTrichPage(),
-              //           ),
-              //         );
-              //       },
-              //       child: ItemDocument(
-              //         width: 130,
-              //         height: 175,
-              //         title: 'Bài trích',
-              //         total: 7032,
-              //         img: AssetHelper.imgDissertation1x,
-              //       ),
-              //     ),
-              //   ],
-              // ),
             ),
             SizedBox(height: 35),
             Container(
@@ -108,49 +85,44 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         Expanded(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(20),
-                      topLeft: Radius.circular(20),
-                    ),
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    children: [
-                      ItemNews(
-                        postDate: '12/2/2022',
-                        titleItem:
-                            'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
-                      ),
-                      ItemNews(
-                        postDate: '12/2/2022',
-                        titleItem:
-                            'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
-                      ),
-                      ItemNews(
-                        postDate: '12/2/2022',
-                        titleItem:
-                            'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
-                      ),
-                      ItemNews(
-                        postDate: '12/2/2022',
-                        titleItem:
-                            'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
-                      ),
-                      ItemNews(
-                        postDate: '12/2/2022',
-                        titleItem:
-                            'Đoàn thư viện Việt Nam tham dự Phiên họp thứ 2',
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20),
+                topLeft: Radius.circular(20),
+              ),
+              color: Colors.white,
+            ),
+            child: FutureBuilder<List<dynamic>>(
+              future: getListNews(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(child: CircularProgressIndicator());
+                }
+                if (snapshot.hasData && snapshot.data != null) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) {
+                      DateTime postDate = snapshot.data![index]['DateCreated'];
+                      String formatpostDate = DateFormat.yMd().format(postDate);
+                      return GestureDetector(
+                        onTap: () {},
+                        child: ItemNews(
+                          postDate: formatpostDate,
+                          titleItem: snapshot.data![index]['Title'],
+                        ),
+                      );
+                    },
+                  );
+                }
+                // return Center(child: CircularProgressIndicator());
+                return Container(
+                  child: Text("No Data"),
+                );
+              },
             ),
           ),
         ),
