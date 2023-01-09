@@ -8,3 +8,4 @@ const BASE_URL = '$PROTOCOL$HOST$PORT$PATH_CONTEXT';
 // const URL_PROFILE = '$BASE_URL/profile';
 // const URL_GET_PROFILE = '$BASE_URL/profile/get-profile';
 const URL_TYPE_DOCUMENT = '$BASE_URL/Statistical/SoLuongTaiLieuTheoLoai';
+const URL_NEWS = '$BASE_URL/General/GetArticleByType?nameAscii=tin-tuc&page=1&pagesize=10';

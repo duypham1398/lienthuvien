@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ltv/constants/asset_helper.dart';
@@ -10,87 +11,99 @@ class ItemChilDocument extends StatelessWidget {
     required this.title,
     required this.numEye,
     required this.numLike,
-    required this.tapChi,
-    required this.tuKhoa,
+    required this.content1,
+    required this.content2,
+    required this.label1,
+    required this.label2,
   }) : super(key: key);
   final String? title;
   final int? numEye;
   final int? numLike;
-  final String? tapChi;
-  final String? tuKhoa;
+  final String label1;
+  final String label2;
+  final String? content1;
+  final String? content2;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: kMediumpading),
+      margin: EdgeInsets.only(top: 16),
+      padding: EdgeInsets.symmetric(horizontal: kMediumpading),
+      width: double.infinity,
+      // color: Colors.red,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
+          Container(
+            padding: EdgeInsets.only(bottom: 8),
             child: Text(
               title!,
               style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: ColorPalette.titleText),
-            ),
-          ),
-          Expanded(
-            child: RichText(
-              text: TextSpan(
-                text: 'Tạp chí: ',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: ColorPalette.unSelected,
-                ),
-                children: <TextSpan>[
-                  TextSpan(
-                    text: tapChi,
-                    style:
-                        TextStyle(fontSize: 12, color: ColorPalette.itemTextsp),
-                  ),
-                ],
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                color: ColorPalette.titleText,
               ),
             ),
           ),
-          Expanded(
-            child: RichText(
-              text: TextSpan(
-                text: 'Từ khóa: ',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: ColorPalette.unSelected,
-                ),
-                children: <TextSpan>[
-                  TextSpan(
-                    text: tuKhoa,
-                    style:
-                        TextStyle(fontSize: 12, color: ColorPalette.itemTextsp),
-                  ),
-                ],
+          RichText(
+            text: TextSpan(
+              text: label1,
+              style: TextStyle(
+                color: ColorPalette.unSelected,
+                fontSize: 12,
               ),
+              children: <TextSpan>[
+                TextSpan(
+                    text: content1,
+                    style: TextStyle(color: ColorPalette.itemTextsp)),
+                // TextSpan(text: ' world!'),
+              ],
             ),
           ),
+          RichText(
+            text: TextSpan(
+              text: label2,
+              style: TextStyle(
+                color: ColorPalette.unSelected,
+                fontSize: 12,
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                    text: content2,
+                    style: TextStyle(color: ColorPalette.itemTextsp)),
+                // TextSpan(text: ' world!'),
+              ],
+            ),
+          ),
+          SizedBox(height: 8),
           Row(
             children: [
-              Container(
+              Expanded(
+                flex: 1,
                 child: Row(
                   children: [
                     SvgPicture.asset(AssetHelper.iconEye),
                     SizedBox(width: 8),
-                    Text(numEye.toString()),
+                    Text(
+                      numEye.toString(),
+                    )
                   ],
                 ),
               ),
-              Container(
+              Expanded(
+                flex: 2,
                 child: Row(
                   children: [
                     SvgPicture.asset(AssetHelper.iconLike),
                     SizedBox(width: 8),
-                    Text(numLike.toString()),
+                    Text(
+                      numLike.toString(),
+                    )
                   ],
                 ),
               ),
             ],
-          )
+          ),
+          Divider(),
         ],
       ),
     );
