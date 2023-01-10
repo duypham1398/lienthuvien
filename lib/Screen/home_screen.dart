@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:ltv/Repository/list_document_repository.dart';
@@ -106,12 +107,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollDirection: Axis.vertical,
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
-                      DateTime postDate = snapshot.data![index]['DateCreated'];
-                      String formatpostDate = DateFormat.yMd().format(postDate);
+                      var postDate = snapshot.data![index]['DateCreated'];
+                      //String formatpostDate = DateFormat.yMd().format(postDate);
                       return GestureDetector(
                         onTap: () {},
                         child: ItemNews(
-                          postDate: formatpostDate,
+                          postDate: postDate,
                           titleItem: snapshot.data![index]['Title'],
                         ),
                       );
